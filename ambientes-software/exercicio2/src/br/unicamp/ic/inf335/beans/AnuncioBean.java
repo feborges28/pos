@@ -19,7 +19,7 @@ public class AnuncioBean implements java.io.Serializable {
 	 */
 	private ArrayList<URL> fotosUrl;
 	/**
-	 * Fração de desconto sendo 0 (0%) e 1 (100%)
+	 * Fraï¿½ï¿½o de desconto sendo 0 (0%) e 1 (100%)
 	 */
 	private Double desconto;
 	
@@ -55,8 +55,12 @@ public class AnuncioBean implements java.io.Serializable {
 
 
 
-	public void setDesconto(Double desconto) {
-		this.desconto = desconto;
+	public void setDesconto(Double desconto) throws Exception {
+		if(desconto < 0.0 || desconto > 1.0){
+			throw new Exception("Desconto invÃ¡lido!");
+		} else {
+			this.desconto = desconto;
+		}
 	}
 
 
@@ -77,7 +81,7 @@ public class AnuncioBean implements java.io.Serializable {
 
 
     /**
-     * Contrutor com parâmetros
+     * Contrutor com parï¿½metros
      * @param produto
      * @param fotosUrl
      * @param desconto
@@ -94,6 +98,6 @@ public class AnuncioBean implements java.io.Serializable {
 	 * @return retona valor do produto menos o desconto 
 	 */
 	public Double getValor() {
-		return produto.getValor()-(produto.getValor()/desconto);
+		return produto.getValor()-(produto.getValor()*desconto);
 	}
 }

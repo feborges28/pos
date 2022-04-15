@@ -79,8 +79,22 @@ public class AnuncianteBean {
 	 * Inclui novo anuncio na lista de anuncios de um anunciante
 	 * @param nAnuncio Anuncio a ser incluido
 	 */
-	public void removeAnuncio (int i) {
-		anuncios.remove(i);	
+	public void removeAnuncio (int i) throws Exception {
+		try {
+			anuncios.remove(i);
+		} catch (Exception e) {
+			if(i < 0) {
+				throw new Exception("Índice inválido! O índice precisa ser maior ou igual a 0");
+			}
+
+			if (this.anuncios.size() > 0 && i > this.anuncios.size() - 1){
+				throw new Exception("Índice inválido! O índice precisa ser menor que o tamanho da lista");
+			}
+
+			if(this.anuncios.size() == 0){
+				throw new Exception("Não existem items para remover na lista");
+			}
+		}
 	}
 	
 	/**
@@ -92,7 +106,8 @@ public class AnuncianteBean {
 		for (AnuncioBean an:anuncios) {
 			soma += an.getValor();
 		}
-		return soma/anuncios.size();
+		double v = Math.floor((soma / anuncios.size()) * 100) / 100;
+		return v;
 	}
 
 }

@@ -41,7 +41,7 @@ public class Brecho {
 		Double media = 0.0;
 		int i = 0;
 		while (i<produtos.size()) {
-			media = produtos.get(i).getValor();
+			media += produtos.get(i).getValor();
 			i++;
 		}
 		media = media / i;

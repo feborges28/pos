@@ -11,10 +11,15 @@ public class Brecho {
 	
 	public static void main(String[] args) {
 		ProdutoBean nProg = new ProdutoBean("CD00001","Celular Galaxy S10", "128 Gb, Preto, com Carregador",1250.0,"Poucos riscos, estado de novo.");
+		produtos.add(nProg);
 		nProg = new ProdutoBean("CD00002","Prod 2 ...", "Bla Bla Bla",1100.0,"Bla Bla Bla");
+		produtos.add(nProg);
 		nProg = new ProdutoBean("CD00003","Prod 3 ...", "Bla Bla Bla",120.0,"Bla Bla Bla");
+		produtos.add(nProg);
 		nProg = new ProdutoBean("CD00004","Prod 4 ...", "Bla Bla Bla",1300.0,"Bla Bla Bla");
+		produtos.add(nProg);
 		nProg = new ProdutoBean("CD00005","Prod 5 ...", "Bla Bla Bla",9400.0,"Bla Bla Bla");
+		produtos.add(nProg);
 		nProg = new ProdutoBean("CD00006","Prod 6 ...", "Bla Bla Bla",1500.0,"Bla Bla Bla");
 		produtos.add(nProg);
 		
@@ -32,7 +37,7 @@ public class Brecho {
 			System.out.println("Codigo = " + produtos.get(i).getCodigo() + " Nome = " + produtos.get(i).getNome() + " Valor = " + produtos.get(i).getValor());
 		}
 		
-		// Calcula Média
+		// Calcula Mï¿½dia
 		Double media = 0.0;
 		int i = 1;
 		while (i<=produtos.size()) {

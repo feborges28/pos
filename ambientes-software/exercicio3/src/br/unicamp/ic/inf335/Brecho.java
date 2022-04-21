@@ -33,7 +33,7 @@ public class Brecho {
 		
 		System.out.println("-------------------- Produtos Ordenados -------------------");
 		// Imprime produtos ordenados
-		for (int i=1; i<=produtos.size(); i++) {
+		for (int i=0; i<produtos.size(); i++) {
 			System.out.println("Codigo = " + produtos.get(i).getCodigo() + " Nome = " + produtos.get(i).getNome() + " Valor = " + produtos.get(i).getValor());
 		}
 		
